@@ -1,0 +1,711 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fdf8ff;
+    overflow-x:hidden;
+}
+
+/* ======================
+   HERO
+====================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#1b3b6f,#29539b);
+    color:white;
+    padding:40px 20px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.8;
+    max-width:700px;
+    margin-bottom:40px;
+}
+
+button{
+    padding:18px 45px;
+    border:none;
+    border-radius:50px;
+    background:#fff;
+    color:#ff4d88;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+/* ======================
+   STORY
+====================== */
+
+.story{
+    min-height:100vh;
+    background:#fff7fb;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:80px 20px;
+}
+
+.story h2{
+    color:#ff4d88;
+    font-size:45px;
+    margin-bottom:40px;
+}
+
+.story-card{
+    background:white;
+    width:90%;
+    max-width:750px;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+.story-card h3{
+    color:#333;
+    margin-bottom:20px;
+}
+
+.story-card p{
+    color:#555;
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.story-card ul{
+    list-style:none;
+}
+
+.story-card li{
+    font-size:22px;
+    margin:15px 0;
+}
+
+/* ======================
+   GALLERY
+====================== */
+
+.gallery{
+    min-height:100vh;
+    padding:80px 20px;
+    background:#ffe6f0;
+    text-align:center;
+}
+
+.gallery h2{
+    font-size:45px;
+    color:#ff4d88;
+    margin-bottom:40px;
+}
+
+.gallery-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.gallery img:hover{
+    transform:translateY(-8px) scale(1.03);
+}
+
+/* ======================
+   LOVE LETTER
+====================== */
+
+.letter{
+    min-height:100vh;
+    background:#fff0f5;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:80px 20px;
+}
+
+.letter h2{
+    color:#ff4d88;
+    font-size:45px;
+    margin-bottom:40px;
+}
+
+.letter-box{
+    background:white;
+    max-width:850px;
+    width:90%;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.letter-box p{
+    color:#444;
+    font-size:22px;
+    line-height:1.8;
+    white-space:pre-wrap;
+}
+
+/* ======================
+   CAKE
+====================== */
+
+.cake-section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#fff7fb;
+    text-align:center;
+}
+
+.cake-section h2{
+    font-size:45px;
+    color:#ff4d88;
+    margin-bottom:15px;
+}
+
+.cake-section p{
+    font-size:22px;
+    color:#555;
+    margin-bottom:30px;
+}
+
+#cake{
+    font-size:170px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#cake:hover{
+    transform:scale(1.1);
+}
+
+/* ======================
+   FINAL MESSAGE
+====================== */
+
+.final-message{
+    min-height:100vh;
+    background:linear-gradient(135deg,#ff7eb3,#ff4d88);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.final-message h2{
+    font-size:50px;
+    margin-bottom:30px;
+}
+
+.final-message p{
+    max-width:800px;
+    font-size:24px;
+    line-height:1.9;
+    margin-bottom:40px;
+}
+
+.final-message h1{
+    font-size:55px;
+}
+
+/* ======================
+   IMAGE POPUP
+====================== */
+
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
+
+.popup span{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+}
+
+/* ======================
+   FLOATING HEARTS
+====================== */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:24px;
+    animation:floatUp linear forwards;
+    pointer-events:none;
+    z-index:999;
+}
+
+@keyframes floatUp{
+
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+
+}
+
+/* ===============================
+   EXTRA MOBILE FIXES
+=============================== */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+
+    .hero p{
+
+        font-size:16px;
+
+        padding:0 10px;
+
+    }
+
+
+    button{
+
+        font-size:16px;
+
+        padding:15px 30px;
+
+    }
+
+
+    .story-card,
+    .letter-box,
+    .reason-card{
+
+        width:95%;
+
+        padding:25px;
+
+    }
+
+
+    .story-card p,
+    .letter-box p,
+    .reason-card p{
+
+        font-size:17px;
+
+    }
+
+
+    #cake{
+
+        font-size:120px;
+
+    }
+
+
+    .final-message{
+
+        padding:25px;
+
+    }
+
+
+    .final-message h2{
+
+        font-size:36px;
+
+    }
+
+
+    .final-message p{
+
+        font-size:18px;
+
+    }
+
+
+    .final-message h1{
+
+        font-size:35px;
+
+    }
+
+
+    #musicBtn{
+
+        bottom:20px;
+
+        right:20px;
+
+        font-size:14px;
+
+        padding:12px 18px;
+
+    }
+
+}
+
+/* ======================
+   BIRTHDAY WISH
+====================== */
+
+#wishMessage{
+
+    opacity:0;
+
+    margin-top:30px;
+
+    font-size:28px;
+
+    color:#ff4d88;
+
+    transition:.8s;
+
+}
+
+.showWish{
+
+    opacity:1;
+
+}
+
+.popCake{
+
+    transform:scale(1.2);
+
+}
+
+/* ======================
+   REASONS
+====================== */
+
+.reasons{
+
+    min-height:100vh;
+
+    background:#fef6ff;
+
+    padding:80px 20px;
+
+    text-align:center;
+
+}
+
+.reasons h2{
+
+    color:#ff4d88;
+
+    font-size:45px;
+
+    margin-bottom:50px;
+
+}
+
+.reason-card{
+
+    background:white;
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:25px auto;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.reason-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.reason-card h3{
+
+    color:#ff4d88;
+
+    margin-bottom:15px;
+
+}
+
+.reason-card p{
+
+    color:#555;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+/* ===============================
+   CONFETTI
+=============================== */
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    font-size:25px;
+
+    animation:fall linear forwards;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+}
+
+
+@keyframes fall{
+
+    from{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(110vh) rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===============================
+   SCROLL ANIMATIONS
+=============================== */
+
+.fade-section{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s ease;
+
+}
+
+
+.fade-section.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ===============================
+   STAR BACKGROUND
+=============================== */
+
+#stars-container{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    overflow:hidden;
+
+}
+
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:twinkle 3s infinite alternate;
+
+}
+
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* ===============================
+   MUSIC BUTTON
+=============================== */
+
+#musicBtn{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    border:none;
+
+    background:#ff4d88;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+}
+
+
+#musicBtn:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ===============================
+   FINAL SURPRISE ANIMATION
+=============================== */
+
+.final-message h2,
+.final-message p,
+.final-message h1{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1.5s ease;
+
+}
+
+
+.final-message.show h2{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+.final-message.show p{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition-delay:.5s;
+
+}
+
+
+.final-message.show h1{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition-delay:1s;
+
+}
